@@ -1,5 +1,10 @@
 import React from 'react';
+import { Panel } from '..';
 
 export const WinePanel = () => {
-  return <div>Wine panel</div>;
+  return (
+    <Panel title="Wine">
+      <div>WinePanel</div>
+    </Panel>
+  );
 };

@@ -1,5 +1,6 @@
 export * from './ui/Layout';
 export * from './ui/Spinner';
+export * from './ui/Panel';
 
 export * from './people/PeoplePanel';
 export * from './people/PersonCard';

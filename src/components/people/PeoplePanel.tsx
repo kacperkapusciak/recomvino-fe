@@ -1,15 +1,7 @@
 import React, { useState, useEffect, ReactElement, Dispatch } from 'react';
-import styled from 'styled-components';
-import { Typography } from '@material-ui/core';
 import { getPeople } from '../../api';
 import { IPerson } from '../../types';
-import { AddPerson, PersonCard, Spinner } from '..';
-
-const Wrapper = styled.div`
-  padding: 16px;
-  max-height: 100vh;
-  overflow-y: scroll;
-`;
+import { AddPerson, PersonCard, Spinner, Panel } from '..';
 
 interface PeoplePanelProps {
   currentPerson: IPerson;
@@ -37,15 +29,12 @@ export const PeoplePanel = ({ currentPerson, setCurrentPerson }: PeoplePanelProp
   }, []);
 
   return (
-    <Wrapper>
-      <Typography variant="h3" gutterBottom>
-        People
-      </Typography>
+    <Panel title="People">
       <AddPerson refetchPeople={fetchPeople} />
       {loading && <Spinner />}
       {people.map((person: IPerson) => (
         <PersonCard key={person.id} person={person} currentPerson={currentPerson} onClick={setCurrentPerson} />
       ))}
-    </Wrapper>
+    </Panel>
   );
 };
