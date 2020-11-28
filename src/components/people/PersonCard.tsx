@@ -1,4 +1,4 @@
-import React, { Dispatch, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Card, CardActionArea, CardContent, Typography } from '@material-ui/core';
 import { AccountCircleTwoTone } from '@material-ui/icons';

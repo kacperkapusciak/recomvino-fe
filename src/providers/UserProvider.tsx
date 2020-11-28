@@ -1,4 +1,4 @@
-import React, { createContext, Dispatch, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { createContext, Dispatch, ReactNode, useContext, useState } from 'react';
 
 import { IPerson } from '../types';
 

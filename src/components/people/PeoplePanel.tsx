@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement, Dispatch } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 import { getPeople } from '../../api';
 import { IPerson } from '../../types';
 import { AddPerson, PersonCard, Spinner, Panel } from '..';
