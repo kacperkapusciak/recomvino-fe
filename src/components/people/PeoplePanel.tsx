@@ -3,12 +3,7 @@ import { getPeople } from '../../api';
 import { IPerson } from '../../types';
 import { AddPerson, PersonCard, Spinner, Panel } from '..';
 
-interface PeoplePanelProps {
-  currentPerson: IPerson;
-  setCurrentPerson: Dispatch<IPerson>;
-}
-
-export const PeoplePanel = ({ currentPerson, setCurrentPerson }: PeoplePanelProps): ReactElement => {
+export const PeoplePanel = (): ReactElement => {
   const [people, setPeople] = useState<IPerson[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -29,11 +24,11 @@ export const PeoplePanel = ({ currentPerson, setCurrentPerson }: PeoplePanelProp
   }, []);
 
   return (
-    <Panel title="People">
+    <Panel title="Użytkownicy">
       <AddPerson refetchPeople={fetchPeople} />
       {loading && <Spinner />}
       {people.map((person: IPerson) => (
-        <PersonCard key={person.id} person={person} currentPerson={currentPerson} onClick={setCurrentPerson} />
+        <PersonCard key={person.id} person={person} />
       ))}
     </Panel>
   );

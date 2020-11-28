@@ -1,9 +1,9 @@
-import React, { Dispatch } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Paper, Typography } from '@material-ui/core';
 import { Logo } from '..';
-import { IPerson } from '../../types';
 import { AccountCircleTwoTone } from '@material-ui/icons';
+import { useUser } from '../../providers/UserProvider';
 
 const Wrapper = styled(Paper)`
   height: 60px;
@@ -20,16 +20,11 @@ const Flex = styled.div`
   user-select: none;
 `;
 
-interface NavBarProps {
-  currentPerson: IPerson;
-  setCurrentPerson: Dispatch<IPerson>;
-}
-
-export const NavBar = ({ currentPerson, setCurrentPerson }: NavBarProps) => {
-  const { name } = currentPerson;
+export const NavBar = () => {
+  const { user, setUser } = useUser();
 
   const handleLogOut = () => {
-    setCurrentPerson({ id: '', name: '' });
+    setUser({ id: '', name: '' });
   };
 
   return (
@@ -38,7 +33,7 @@ export const NavBar = ({ currentPerson, setCurrentPerson }: NavBarProps) => {
       <Flex onClick={handleLogOut}>
         <AccountCircleTwoTone style={{ marginRight: 8 }} />
         <Typography variant="h6" component="p">
-          {currentPerson.id ? name : 'Log in'}
+          {user.id ? user.name : 'Niezalogowano'}
         </Typography>
       </Flex>
     </Wrapper>

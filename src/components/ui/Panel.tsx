@@ -15,7 +15,7 @@ interface PanelProps {
 
 export const Panel = ({ title, children }: PanelProps): ReactElement => (
   <Wrapper>
-    <Typography variant="h3" gutterBottom>
+    <Typography variant="h4" gutterBottom>
       {title}
     </Typography>
     {children}

@@ -37,7 +37,7 @@ export const AddPerson = ({ refetchPeople }: AddPersonProps) => {
     <Form onSubmit={handlePersonAdd}>
       <TextField
         id="add-person"
-        label="Add person"
+        label="Dodaj osobę"
         value={person}
         onChange={handleTextChange}
         variant="outlined"

@@ -5,6 +5,7 @@ import { AccountCircleTwoTone } from '@material-ui/icons';
 import { green } from '@material-ui/core/colors';
 
 import { IPerson } from '../../types';
+import { useUser } from '../../providers/UserProvider';
 
 const CardStyled = styled(Card)`
   margin-bottom: 8px;
@@ -16,16 +17,20 @@ const CardContentStyled = styled(CardContent)`
 
 interface PersonCardProps {
   person: IPerson;
-  currentPerson: IPerson;
-  onClick: Dispatch<IPerson>;
 }
 
-export const PersonCard = ({ person, currentPerson, onClick }: PersonCardProps): ReactElement => {
+export const PersonCard = ({ person }: PersonCardProps): ReactElement => {
   const { name } = person;
-  const isLoggedIn = person === currentPerson;
+  const { user, setUser } = useUser();
+
+  const handleUserChange = () => {
+    setUser(person);
+  };
+
+  const isLoggedIn = person === user;
   return (
     <CardStyled elevation={isLoggedIn ? 4 : 1}>
-      <CardActionArea onClick={() => onClick(person)}>
+      <CardActionArea onClick={handleUserChange}>
         <CardContentStyled>
           <AccountCircleTwoTone style={{ marginRight: 16, color: isLoggedIn ? green[600] : 'inherit' }} />
           <Typography variant="h5" component="p">

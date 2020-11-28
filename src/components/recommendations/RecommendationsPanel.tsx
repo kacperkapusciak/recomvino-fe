@@ -3,7 +3,7 @@ import { Panel } from '..';
 
 export const RecommendationsPanel = () => {
   return (
-    <Panel title="Recommendation">
+    <Panel title="Wybrane dla Ciebie">
       <div>RecommendationsPanel</div>
     </Panel>
   );
