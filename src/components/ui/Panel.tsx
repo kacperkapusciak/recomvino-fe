@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 
 const Wrapper = styled.div`
   padding: 16px;
-  max-height: 100vh;
+  max-height: calc(100vh - 60px);
   overflow-y: auto;
 `;
 
