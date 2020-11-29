@@ -21,16 +21,12 @@ const Flex = styled.div`
 `;
 
 export const NavBar = () => {
-  const { user, setUser } = useUser();
-
-  const handleLogOut = () => {
-    setUser({ id: '', name: '' });
-  };
+  const { user, logOut } = useUser();
 
   return (
     <Wrapper elevation={6}>
       <Logo />
-      <Flex onClick={handleLogOut}>
+      <Flex onClick={logOut}>
         <AccountCircleTwoTone style={{ marginRight: 8 }} />
         <Typography variant="h6" component="p">
           {user.id ? user.name : 'Niezalogowano'}
