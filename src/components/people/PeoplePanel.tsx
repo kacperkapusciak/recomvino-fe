@@ -28,7 +28,7 @@ export const PeoplePanel = (): ReactElement => {
       <AddPerson refetchPeople={fetchPeople} />
       {loading && <Spinner />}
       {people.map((person: IPerson) => (
-        <PersonCard key={person.id} person={person} />
+        <PersonCard key={`person-panel-${person.id}`} person={person} />
       ))}
     </Panel>
   );

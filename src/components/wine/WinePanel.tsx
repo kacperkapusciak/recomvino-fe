@@ -63,7 +63,7 @@ export const WinePanel = () => {
       {loading && <Spinner />}
       <Wrapper>
         {favoriteWines.map((wine) => (
-          <WineCard key={wine.id} wine={wine} />
+          <WineCard key={`wine-panel-${wine.id}`} wine={wine} />
         ))}
       </Wrapper>
     </Panel>
