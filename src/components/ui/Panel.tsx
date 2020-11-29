@@ -8,16 +8,26 @@ const Wrapper = styled.div`
   overflow-y: auto;
 `;
 
+const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 interface PanelProps {
   title: string;
   children: ReactNode;
+  action?: ReactNode;
 }
 
-export const Panel = ({ title, children }: PanelProps): ReactElement => (
+export const Panel = ({ title, children, action }: PanelProps): ReactElement => (
   <Wrapper>
-    <Typography variant="h4" gutterBottom>
-      {title}
-    </Typography>
+    <Flex>
+      <Typography variant="h4" gutterBottom>
+        {title}
+      </Typography>
+      {action}
+    </Flex>
     {children}
   </Wrapper>
 );

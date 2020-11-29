@@ -15,3 +15,4 @@ export * from './recommendations/RecommendationsPanel';
 export * from './wine/WineCard';
 export * from './wine/WinePanel';
 export * from './wine/Price';
+export * from './wine/AddWine';

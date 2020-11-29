@@ -4,6 +4,7 @@ export * from './addPerson';
 
 export * from './getWines';
 export * from './getWine';
+export * from './addWine';
 
 export * from './getLikes';
 export * from './addLike';
